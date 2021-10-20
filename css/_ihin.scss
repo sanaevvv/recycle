@@ -1,0 +1,114 @@
+@import 'mixins';
+@import 'valiables';
+
+.page-title1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 30px auto;
+
+  position: relative;
+  line-height: 1.4;
+  top: 0;
+
+  width: 250px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 8px;
+    height: 100%;
+    display: inline-block;
+  }
+  &:before {
+    border-left: solid 2px #333;
+    border-top: solid 2px #333;
+    border-bottom: solid 2px #333;
+    left: 0;
+  }
+  &:after {
+    content: '';
+    border-top: solid 2px #333;
+    border-right: solid 2px #333;
+    border-bottom: solid 2px #333;
+    right: 0;
+  }
+}
+.polite {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+}
+.memory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 30px;
+  p{
+    align-self: center;
+  }
+}
+.memory-text {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+}
+.trouble-wrapper {
+  background: lightgray;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.trouble-ttl {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.voice {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: orange;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+.voice-grid{
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 100px 100px 1fr 100px 1fr;
+  gap: 20px;
+  @include mq(tablet){
+    grid-template-columns: 100px 100px 1fr;
+    gap:0;
+  }
+  @include mq(sp){
+    grid-template-columns: 80px 80px 1fr;
+    gap:0;
+  }
+}
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+.sp-space-grid{
+  display: none;
+  @include mq(tablet){
+    display: block;
+  }
+}

@@ -705,7 +705,7 @@ section {
 }
 
 .tel {
-  font-size: clamp(2rem, 3vw, 3.6rem);
+  font-size: clamp(2rem, 10vw, 3.6rem);
   color: red;
   text-shadow: 1px 3px 0 #000;
   font-weight: bold;
@@ -717,31 +717,19 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  grid-template: '...  sub-ttl time time' 30px 'logo ttl     icon tel' 40px / 80px 1fr 50px;
+  grid-template: 'logo  c-name ... time time' 30px 'logo c-name ... icon tel' 40px / 80px 250px  1fr   50px 300px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
 
 .header-grid .logo {
   grid-area: logo;
 }
 
-.header-grid .sub-ttl {
-  grid-area: sub-ttl;
-  font-weight: bold;
-  font-size: 90%;
-  padding-left: 10px;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-}
-
-.header-grid .site-ttl {
-  grid-area: ttl;
-  font-size: 2.4rem;
-  font-weight: bold;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding-left: 10px;
+.header-grid .company-name {
+  grid-area: c-name;
 }
 
 .header-grid .available-time {
@@ -757,7 +745,7 @@ section {
 
 .header-grid .tel {
   grid-area: tel;
-  font-size: 4rem;
+  font-size: clamp(3.5rem, 6vw, 4rem);
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -767,8 +755,7 @@ section {
 @media screen and (max-width: 768px) {
   .header-grid {
     margin-top: 20px;
-    grid-template: '...  sub-ttl' 10px 'logo ttl    ' 20px 'time time   ' 30px 'icon tel    ' 30px/ 60px -webkit-max-content;
-    grid-template: '...  sub-ttl' 10px 'logo ttl    ' 20px 'time time   ' 30px 'icon tel    ' 30px/ 60px max-content;
+    grid-template: 'logo  c-name' 10px 'logo c-name ' 20px 'time time   ' 30px 'icon tel    ' 30px/ 60px  auto;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1244,7 +1231,7 @@ section {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 
 .tel-contact {
@@ -1278,7 +1265,12 @@ section {
   content: "\f2a0";
   position: absolute;
   left: 10%;
-  font-size: 120%;
+}
+
+@media screen and (max-width: 480px) {
+  .tel-contact::before {
+    left: 5%;
+  }
 }
 
 .tel-contact::after {
@@ -1287,6 +1279,12 @@ section {
   content: "\f138";
   position: absolute;
   right: 10%;
+}
+
+@media screen and (max-width: 480px) {
+  .tel-contact::after {
+    right: 5%;
+  }
 }
 
 .mail-contact {
@@ -1319,7 +1317,12 @@ section {
   content: "\f2b6";
   position: absolute;
   left: 10%;
-  font-size: 120%;
+}
+
+@media screen and (max-width: 480px) {
+  .mail-contact::before {
+    left: 5%;
+  }
 }
 
 .mail-contact::after {
@@ -1328,6 +1331,12 @@ section {
   content: "\f138";
   position: absolute;
   right: 10%;
+}
+
+@media screen and (max-width: 480px) {
+  .mail-contact::after {
+    right: 5%;
+  }
 }
 
 .credit-grid {

@@ -72,7 +72,7 @@ section {
 }
 
 .tel {
-  font-size: clamp(2rem, 3vw, 3.6rem);
+  font-size: clamp(2rem, 10vw, 3.6rem);
   color: red;
   text-shadow: 1px 3px 0 #000;
   font-weight: bold;
@@ -81,26 +81,18 @@ section {
   display: grid;
   justify-content: center;
   grid-template:
-    '...  sub-ttl time time' 30px
-    'logo ttl     icon tel' 40px /
-    80px 1fr 50px;
+    'logo  c-name ... time time' 30px
+    'logo c-name ... icon tel' 40px /
+    80px 250px  1fr   50px 300px;
+    align-items: center;;
+    gap: 10px;
   .logo {
     grid-area: logo;
   }
-  .sub-ttl {
-    grid-area: sub-ttl;
-    font-weight: bold;
-    font-size: 90%;
-    padding-left: 10px;
-    align-self: end;
+  .company-name{
+     grid-area: c-name;
   }
-  .site-ttl {
-    grid-area: ttl;
-    font-size: 2.4rem;
-    font-weight: bold;
-    align-self: center;
-    padding-left: 10px;
-  }
+
   .available-time {
     grid-area: time;
     // max-width: 340px;
@@ -111,18 +103,18 @@ section {
   }
   .tel {
     grid-area: tel;
-    font-size: 4rem;
+    font-size: clamp(3.5rem, 6vw, 4rem);
     align-self: center;
     padding: 0 10px;
   }
   @include mq(tablet) {
     margin-top: 20px;
     grid-template:
-      '...  sub-ttl' 10px
-      'logo ttl    ' 20px
+      'logo  c-name' 10px
+      'logo c-name ' 20px
       'time time   ' 30px
       'icon tel    ' 30px/
-      60px max-content;
+      60px  auto;
     align-items: center;
     gap: 10px;
     justify-content: center;
@@ -504,7 +496,7 @@ section {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 .tel-contact {
   display: flex;

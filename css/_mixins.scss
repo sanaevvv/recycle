@@ -69,7 +69,9 @@
   content: #{'"' + $code + '"'};
   position: absolute;
   left: 10%;
-  font-size: 120%;
+  @include mq(sp){
+     left: 5%;
+  }
 }
 
 @mixin iconAfter($code) {
@@ -78,6 +80,9 @@
   content: #{'"' + $code + '"'};
   position: absolute;
   right: 10%;
+   @include mq(sp){
+     right: 5%;
+  }
 }
 
 // 蛍光アンダーライン

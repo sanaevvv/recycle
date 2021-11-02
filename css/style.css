@@ -647,7 +647,7 @@ p[class^='furniture-grid-bg-'] {
 }
 
 .company-profile-grid dd {
-  padding: 10px;
+  margin-left: 10px;
 }
 
 html {
